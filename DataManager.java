@@ -19,9 +19,9 @@ public class DataManager {
         file = new File(fileName);
     }
 
-    public int[] genRandomNumbers(int limit){
-        int[] myNumbers = new int[limit];
-        Set<Integer> savedNumbers = new HashSet<Integer>();
+    public Integer[] genRandomNumbers(int limit) {
+        Integer[] myNumbers = new Integer[limit];
+        Set<Integer> savedNumbers = new HashSet<>();
         for (int i = 0; i < limit; i++) {
             int randomNumber;
             do {
@@ -30,41 +30,30 @@ public class DataManager {
             myNumbers[i] = randomNumber;
             savedNumbers.add(randomNumber);
         }
-
         return myNumbers;
     }
 
-    public void write(int[] numbers)throws Exception{
+    public void write(Integer[] numbers) throws Exception {
         PrintWriter writer = new PrintWriter(new FileWriter(file, false));
-        for (int i=0; i<numbers.length; i++){
-            writer.println(numbers[i]);
+        for (Integer number : numbers) {
+            writer.println(number);
         }
         writer.close();
     }
 
-    public int[] read(int limit) throws Exception{
+    public Integer[] read(int limit) throws Exception {
         if (file.exists()) {
-            int[] selectedNumbers = new int[limit];
-            BufferedReader bufer = new BufferedReader(new FileReader(file));
-            String line = bufer.readLine();
-            for (int i = 0; i < selectedNumbers.length; i++) {
-                if(line != null){
-                    selectedNumbers[i] = Integer.parseInt(line);
-                    line = bufer.readLine();
-                }
+            Integer[] selectedNumbers = new Integer[limit];
+            BufferedReader buffer = new BufferedReader(new FileReader(file));
+            String line = buffer.readLine();
+            for (int i = 0; i < selectedNumbers.length && line != null; i++) {
+                selectedNumbers[i] = Integer.parseInt(line);
+                line = buffer.readLine();
             }
-            if(line !=null){
-                bufer.close();
-            }
+            buffer.close();
             return selectedNumbers;
-        }else{
-            PrintWriter writer = new PrintWriter(new FileWriter(file, true));
-            String line = "ID,Nombre,CantDisponible,CantVendida,Estado,Precio,Mililitros,TipoBebida,Gramos,Sabor,Tamanio,TipoCarne,Origen,TipoProducto\n";
-            writer.print(line);
-            writer.close();
+        } else {
             return null;
         }
     }
-    
-    
 }
