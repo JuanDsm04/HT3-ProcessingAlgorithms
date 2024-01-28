@@ -1,11 +1,11 @@
-import java.util.HashSet;
-import java.util.Set;
-
 /**
  * @author Diego Flores & Juan Solis
  * @creationDate 24/01/2024
  * @description Clase encargada de llevar el control de los datos en los archivos de texto
  */
+import java.util.HashSet;
+import java.util.Set;
+
 public class DataManager {
 
     public int[] genRandomNumbers(int limit){

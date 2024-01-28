@@ -2,6 +2,7 @@
  * @author Diego Flores & Juan Solis
  * @creationDate 24/01/2024
  * @description Clase encargada de usar el algoritmo QuickSort
+ * @references https://www.geeksforgeeks.org/quick-sort/
  */
 public class QuickSort<T extends Comparable<T>> implements ISort<T> {
 

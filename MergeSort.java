@@ -2,8 +2,8 @@
  * @author Diego Flores & Juan Solis
  * @creationDate 24/01/2024
  * @description Clase encargada de usar el algoritmo MergeSort
+ * @references https://www.geeksforgeeks.org/merge-sort/
  */
-
 public class MergeSort<T extends Comparable<T>> implements ISort<T> {
 
     @Override

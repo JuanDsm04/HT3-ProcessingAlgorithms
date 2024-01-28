@@ -2,6 +2,7 @@
  * @author Diego Flores & Juan Solis
  * @creationDate 24/01/2024
  * @description Clase encargada de usar el algoritmo GnomeSort
+ * @references https://www.geeksforgeeks.org/gnome-sort-a-stupid-one/
  */
 public class GnomeSort<T extends Comparable<T>> implements ISort<T>{
 

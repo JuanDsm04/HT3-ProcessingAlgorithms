@@ -1,10 +1,11 @@
-import java.util.Arrays;
-
 /**
  * @author Diego Flores & Juan Solis
  * @creationDate 24/01/2024
  * @description Clase encargada de usar el algoritmo RedixSort
+ * @references https://www.geeksforgeeks.org/radix-sort/
  */
+ import java.util.Arrays;
+
 public class RadixSort <T extends Comparable<T>> implements ISort<T>{
 
     @Override
